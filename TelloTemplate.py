@@ -63,6 +63,8 @@ try:
         sendmsg('up 50')
         sendmsg('down 50', 8)
         sendmsg('flip f')
+        sendmsg('cw 360')
+        sendmsg('flip b')
 
 
         sendmsg('land')
