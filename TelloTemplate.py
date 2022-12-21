@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 6):
+def sendmsg(msg, sleep = 8):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -41,7 +41,15 @@ recvThread = threading.Thread(target=recv)
 recvThread.start()
 
 
-# CREATE FUNCTIONS HERE....
+#Sqaure Function
+def square():
+    for i in range(4):
+        sendmsg('forward 100')
+        sendmsg('cw 90')
+
+
+
+#Triangle Function
 
 
 print("\nKyle Rocco")
@@ -59,8 +67,7 @@ try:
         sendmsg('command', 0)
         sendmsg('takeoff')
 
-        # Review the (SDK) Software Development Kit resource for Drone Commands
-        # Delete these comments before writing your program
+        square()
 
         sendmsg('land')
 
