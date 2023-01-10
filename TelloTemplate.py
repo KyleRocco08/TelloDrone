@@ -47,9 +47,13 @@ def square():
         sendmsg('forward 100')
         sendmsg('cw 90')
 
+def curve_circle():
+    sendmsg('curve 25 25 0 -75 100 0 30', 12)
+
+    sendmsg('curve -75 100 0 25 25 0 30', 12)
 
 
-#Triangle Function
+    #Triangle Function
 def triangle():
     for i in range(3):
         sendmsg('forward 100')
@@ -73,7 +77,9 @@ try:
 
         #square()
 
-        triangle()
+        #triangle()
+
+        curve_circle()
 
         sendmsg('land')
 
