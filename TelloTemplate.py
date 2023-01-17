@@ -68,19 +68,24 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
+        sendmsg('battery?', 10)
+        sendmsg('streamon', 10)
         sendmsg('takeoff', 10)
 
         #firsthoop
         sendmsg('up 35' , 10)
-        sendmsg('forward 175', 10)
+        sendmsg('forward 170', 10)
         #secondhoop
         sendmsg('go 200 10 70 50', 10)
-
+        #thirdhoop
         sendmsg('cw 180', 10)
-        sendmsg('curve -40 -25 0 -20 -300 0 30', 10)
-        sendmsg('forward 225', 10)
-
+        sendmsg('curve -40 -25 0 -20 -250 0 30', 10)
+        sendmsg('forward 125', 10)
+        #fourthhoop
+        sendmsg('go 180 0 -70 50', 10)
+        sendmsg('flip b')
         sendmsg('land')
+
 
         print('\nGreat Flight!!!')
 
@@ -88,6 +93,3 @@ try:
         print('\nMake sure you check WIFI, surroundings, co-pilot is ready, re-run program\n')
 except KeyboardInterrupt:
     sendmsg('emergency')
-
-breakr = True
-sock.close()
