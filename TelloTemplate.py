@@ -73,13 +73,13 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
+        sendmsg('takeoff', 8)
 
-        #square()
+        square()
 
-        #triangle()
 
-        curve_circle()
+
+
 
         sendmsg('land')
 
